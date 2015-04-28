@@ -1,0 +1,243 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cust",
+				"customDelimiters"
+			],
+			[
+				"th",
+				"throws"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<?php\n\ninclude(\"Calculator.php\");\n\n/**\n* Test cases for calculator\n*/\nclass CalculatorTest extends PHPUnit_Framework_TestCase\n{\n	private $c;\n\n	function setUp()\n	{\n		//Create calculator\n		$this->c = new Calculator();\n	}\n	\n	function testReturnZero()\n	{\n		//Test if return 0 when there is no arguments\n		$this->assertEquals(0, $this->c->add(\"\"));\n	}\n\n	function testOneNumber()\n	{\n		//Test if return 0 when there is no arguments\n		$this->assertEquals(42, $this->c->add(\"42\"));\n	}\n\n	function testTwoNumbers()\n	{\n		//Test if Calculator can sum properly\n		$this->assertEquals(42, $this->c->add(\"34,8\"));\n	}\n\n	function testSum()\n	{\n		//Test if can sum multiple numbers\n		$this->assertEquals(42, $this->c->add(\"21,8,12,1\"));\n	}\n\n	function testDelimiter()\n	{\n		//Uses \\n as delimiter\n		$this->assertEquals(42, $this->c->add(\"19\\n23\"));\n	}\n\n	function testCustomDelimiter()\n	{\n		//Use a custom delimiter: +\n		$this->assertEquals(42, $this->c->add(\"//+\\n21+21\"));\n	}\n\n	function testMultipleCustomDelimiter()\n	{\n		//Use a custom delimiter: +\n		$this->assertEquals(42, $this->c->add(\"//+%\\n19+21%2\"));\n	}\n\n	/**\n     * @expectedException NegativeNumberException\n     */\n	function testErrorNegatives()\n	{\n		//Negatives numbers are not allowed\n		$this->c->add(\"-54,96\");\n	}\n\n	function testIgnoreBigNumbers()\n	{\n		//Numbers bigger than 1000 should be ignored\n		$this->assertEquals(42, $this->c->add(\"1001,42\"));\n	}\n\n	function testLongDelimiters()\n	{\n		//Numbers bigger than 1000 should be ignored\n		$this->assertEquals(42, $this->c->add(\"//[+++]\\n21+++21\"));\n	}\n\n	function testMultipleLongDelimiters()\n	{\n		$this->assertEquals(42, $this->c->add(\"//[11][00][51]\\n201120055115\"));\n	}\n	function testMixedDelimiters()\n	{\n		$this->assertEquals(42, $this->c->add(\"//[11]6[00][51]\\n86121120055115\"));\n	}\n}",
+			"file": "CalculatorTest.php",
+			"file_size": 1873,
+			"file_write_time": 1430148833000000,
+			"settings":
+			{
+				"buffer_size": 1779,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Calculator.php",
+			"settings":
+			{
+				"buffer_size": 1257,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Java/JavaC.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": true,
+		"show_open_files": true,
+		"show_tabs": true,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/clement/.config/sublime-text-2/Packages/User/Default (Linux).sublime-keymap",
+		"/home/clement/Source/tdd-kata/test/CalculatorTest.php",
+		"/home/clement/Source/tdd-kata/src/Calculator.php",
+		"/home/clement/Source/tdd-kata/src/autoload.php",
+		"/home/clement/Source/sublime/index.html",
+		"/home/clement/Source/sublime/timer.html",
+		"/home/clement/Documents/scores",
+		"/home/clement/Documents/compile.py",
+		"/home/clement/.config/sublime-text-2/Packages/User/Distraction Free.sublime-settings",
+		"/home/clement/Source/sublime/.gitignore",
+		"/home/clement/.config/sublime-text-2/Packages/User/doctype.sublime-snippet",
+		"/home/clement/Source/IAConsole/src/iaconsole/Board.java",
+		"/home/clement/Source/IAConsole/src/iaconsole/IAConsole.java",
+		"/home/clement/Source/IAConsole/src/IAConsole.sublime-project",
+		"/home/clement/Source/IAConsole/src/IAConsole.sublime-workspace",
+		"/home/clement/.config/sublime-text-2/Packages/Default/Default (Linux).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"vampyre"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CalculatorTest.php",
+					"settings":
+					{
+						"buffer_size": 1779,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1586,
+								1586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Calculator.php",
+					"settings":
+					{
+						"buffer_size": 1257,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								451,
+								451
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"index.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/home/clement/Source/sublime/sublime.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 253.0,
+	"status_bar_visible": true
+}
