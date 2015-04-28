@@ -42,7 +42,7 @@ class CalculatorTest extends PHPUnit_Framework_TestCase
 	function testDelimiter()
 	{
 		//Uses \n as delimiter
-		$this->assertEquals(42, $this->c->add("19\n23"));
+		$this->assertEquals(42, $this->c->add("9\n23"));
 	}
 
 	function testCustomDelimiter()
